@@ -13,6 +13,14 @@ def index():
     data = json.load(f)
     f.close()
 
+    years = sorted(data.keys())
+
+    requested_data = {}
+    for year in years:
+        requested_data[year] = data[year]
+
+
+
     return render_template('index.html', years = sorted(data.keys()))
 
 @app.route('/year')
