@@ -1,0 +1,38 @@
+
+<html>
+<head>
+  <title>Life Expectancy Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    .rokkitt-font {
+      font-family: "Rokkitt", serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body class="rokkitt-font">
+
+  <h1>Life Expectancy Lab - Pearl Liu</h1>
+
+  <div id="line_graph_all">
+    {% include 'line_graph.svg' %}
+  </div>
+
+  <div>
+    <form action="/year" method="GET">
+      <label for="year">Choose a year:</label><br>
+      <select name="year" id="year_select">
+      </select>
+      <input type="submit" value="Submit">
+    <form>
+  </div>
+
+  <footer>
+    All data from <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=MX-US-CA"> The World Bank</a>.
+  </footer>
+</body>
+</html>
