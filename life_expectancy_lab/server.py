@@ -14,6 +14,7 @@ def index():
     f.close()
 
     years = sorted(data.keys())
+    print(years)
 
     requested_data = {}
     for year in years:
