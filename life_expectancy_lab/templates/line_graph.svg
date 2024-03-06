@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
-
-     <text x="250" y="250" text-anchor="middle">Insert your line graph here</text>
-
-     {% for year in years %}
-          <line class="axis" x1="10" y1="150" x2="375" y2="150" />
-     {% endfor %} #sort dictionary 
-</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+
+     <line class="axis" x1="10" y1="150" x2="375" y2="150" />
+
+     {% for point in canada_endpoints %}
+          <line class="line" x1="{{60+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{60+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round"/>
+     {% endfor %}
+
+     {% for point in mexico_endpoints %}
+          <line class="line" x1="{{60+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{60+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round"/>
+     {% endfor %}
+
+     {% for point in usa_endpoints %}
+          <line class="line" x1="{{60+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{60+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round"/>
+     {% endfor %}
+
+
+     {% for year in years %}
+      <text class="label" x="{{60+loop.index0*90}}" y="170">{{year}}</text>
+     {% endfor %}
+</svg>

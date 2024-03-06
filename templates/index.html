@@ -26,6 +26,13 @@
     <form action="/year" method="GET">
       <label for="year">Choose a year:</label><br>
       <select name="year" id="year_select">
+        {% for y in years %}
+          {% if y == year %}
+            <option value="{{y}}" selected>{{y}}</option>
+          {% else %}
+            <option value="{{y}}">{{y}}</option>
+          {% endif %}
+      {% endfor %}
       </select>
       <input type="submit" value="Submit">
     <form>
