@@ -8,3 +8,13 @@ svg{
   border-style: solid;
   border-width: 1px;
 }
+
+.axis {
+  stroke:black; 
+  stroke-width:5;
+}
+
+.line {
+  stroke:black; 
+  stroke-width:2;
+}

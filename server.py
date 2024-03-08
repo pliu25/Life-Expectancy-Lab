@@ -29,6 +29,7 @@ def index():
         mexico_line_endpoints.append([mexico[start_x],mexico[stop_x]])
         usa_line_endpoints.append([usa[start_x],usa[stop_x]])
 
+    print("c_e",canada_line_endpoints)
     return render_template('index.html', years = sorted(data["Canada"].keys()), canada_endpoints = canada_line_endpoints, mexico_endpoints = mexico_line_endpoints, usa_endpoints = usa_line_endpoints)
 
 @app.route('/year')
