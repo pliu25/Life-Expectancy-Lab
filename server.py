@@ -21,16 +21,22 @@ def index():
     mexico_line_endpoints =[]
     usa_line_endpoints =[]
 
+    years = sorted(data["Canada"].keys())
+    increment_years = []
 
-    for i in range(len(years)-1): # make it easy to dynamically generate a line graph
-        start_x = years[i] #generate endpoints for each line segment
-        stop_x = years[i+1]
+    for year in range(0, len(years), 10):
+        increment_years.append(years[year])
+
+
+    for i in range(len(increment_years)-1): # make it easy to dynamically generate a line graph
+        start_x = increment_years[i] #generate endpoints for each line segment
+        stop_x = increment_years[i+1]
         canada_line_endpoints.append([canada[start_x],canada[stop_x]])
         mexico_line_endpoints.append([mexico[start_x],mexico[stop_x]])
         usa_line_endpoints.append([usa[start_x],usa[stop_x]])
 
     print("c_e",canada_line_endpoints)
-    return render_template('index.html', years = sorted(data["Canada"].keys()), canada_endpoints = canada_line_endpoints, mexico_endpoints = mexico_line_endpoints, usa_endpoints = usa_line_endpoints)
+    return render_template('index.html', years = sorted(data["Canada"].keys()), increment_years = increment_years, canada_endpoints = canada_line_endpoints, mexico_endpoints = mexico_line_endpoints, usa_endpoints = usa_line_endpoints)
 
 @app.route('/year')
 def year():
