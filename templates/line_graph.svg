@@ -18,5 +18,5 @@
 
      {% for year in increment_years %}
       <text class="label" x="{{60+loop.index0*90}}" y="170">{{year}}</text>
-     {% endfor %}
+     {% endfor %} 
 </svg>
