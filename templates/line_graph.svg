@@ -1,22 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="500" height="500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
 
 
-     <line class="axis" x1="10" y1="150" x2="375" y2="150" stroke= "black"/>
+     <line class="axis" x1="100" y1="450" x2="650" y2="450" stroke= "black" stroke-width = "5"/>
+     <line class="axis" x1="100" y1="50" x2="100" y2="450" stroke= "black" stroke-width = "5"/>
 
      {% for point in canada_endpoints %}
-          <line class="line" x1="{{60+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{60+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round" stroke="black"/>
+          <line class="line" x1="{{100+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{100+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round" stroke="black"/>
      {% endfor %}
 
      {% for point in mexico_endpoints %}
-          <line class="line" x1="{{60+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{60+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round" stroke="black"/>
+          <line class="line" x1="{{100+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{100+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round" stroke="black"/>
      {% endfor %}
 
      {% for point in usa_endpoints %}
-          <line class="line" x1="{{60+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{60+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round" stroke="black"/>
+          <line class="line" x1="{{100+loop.index0*90}}" y1="{{180-point[0]}}" x2="{{100+(loop.index0+1)*90}}" y2="{{180-point[1]}}" stroke-linecap="round" stroke="black"/>
      {% endfor %}
 
 
      {% for year in increment_years %}
-      <text class="label" x="{{60+loop.index0*90}}" y="170">{{year}}</text>
+      <text class="label" x="{{100+loop.index0*90}}" y="470">{{year}}</text>
      {% endfor %} 
 </svg>
