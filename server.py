@@ -20,13 +20,14 @@ def index():
     canada_line_endpoints =[]
     mexico_line_endpoints =[]
     usa_line_endpoints =[]
-
+    print(canada)
     years = sorted(data["Canada"].keys())
     increment_years = []
 
     for year in range(0, len(years), 10):
         increment_years.append(years[year])
 
+    
 
     for i in range(len(increment_years)-1): # make it easy to dynamically generate a line graph
         start_x = increment_years[i] #generate endpoints for each line segment
