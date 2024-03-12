@@ -1,29 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="1000" height="550">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" stroke="none">
 
-     <line class="axis" x1="100" y1="450" x2="675" y2="450" stroke= "black" stroke-width = "5"/>
-     <line class="axis" x1="100" y1="50" x2="100" y2="450" stroke= "black" stroke-width = "5"/>
+     <line class="axis" x1="100" y1="498" x2="675" y2="498" stroke-width = "5"/>
+     <line class="axis" x1="100" y1="140" x2="100" y2="500" stroke-width = "5"/>
 
+     <line class="line" x1="100" y1="{{450-((universalAvg -67.5)*13) -145}}" x2="675" y2="{{universalAvg}}" />
+
+     <a class="canada_class">
      {% for point in canada_endpoints %}
-          <line class="line" x1="{{100+loop.index0*90}}" y1="{{480-point[0]}}" x2="{{100+(loop.index0+1)*90}}" y2="{{480-point[1]}}" stroke-linecap="round" stroke="black"/>
+          <line class="line" x1="{{100+loop.index0*90}}" y1="{{450-((point[0]-67.5)*13)-145}}" x2="{{100+(loop.index0+1)*90}}" y2="{{450-((point[1]-67.5)*13)-145}}" stroke-linecap="round"/>
      {% endfor %}
+     <text class="label" x="675" y="125">Canada</text>
+     </a>
 
+     <a class="mexico_class">
      {% for point in mexico_endpoints %}
-          <line class="line" x1="{{100+loop.index0*90}}" y1="{{480-point[0]}}" x2="{{100+(loop.index0+1)*90}}" y2="{{480-point[1]}}" stroke-linecap="round" stroke="black"/>
+          <line class="line" x1="{{100+loop.index0*90}}" y1="{{450-((point[0]-67.5)*13)-155}}" x2="{{100+(loop.index0+1)*90}}" y2="{{450-((point[1]-67.5)*13)-155}}" stroke-linecap="round"/>
      {% endfor %}
+     <text class="label" x="675" y="267.5">Mexico</text>
+     </a>
 
+     <a class="usa_class">
      {% for point in usa_endpoints %}
-          <line class="line" x1="{{100+loop.index0*90}}" y1="{{480-point[0]}}" x2="{{100+(loop.index0+1)*90}}" y2="{{480-point[1]}}" stroke-linecap="round" stroke="black"/>
+          <line class="line" x1="{{100+loop.index0*90}}" y1="{{450-((point[0]-67.5)*13)-145}}" x2="{{100+(loop.index0+1)*90}}" y2="{{450-((point[1]-67.5)*13)-145}}" stroke-linecap="round"/>
      {% endfor %}
-     
-    
+     <text class="label" x="675" y="182.5">USA</text>
+     </a>
 
 
      {% for year in increment_years %}
-      <text class="label" x="{{100+loop.index0*90}}" y="470">{{year}}</text>
+      <text class="label" x="{{100+loop.index0*90}}" y="520">{{year}}</text>
      {% endfor %} 
-     <text class= "label" id= "axis_title" x="320" y="500" font-size= "20px" text-anchor="center" >Year (1960-2020)</text>
-     <text class="label" id= "axis_title" text-anchor= "center" alignment-baseline="middle" transform="translate(50, 315) rotate(270)">Life Expectancy (years)</text>
-     <text class= "label" id= "title" x="100" y="20" font-size= "30px"  >Average Life Expectancy in Canada, Mexico, and the USA </text>
-     <text class= "label" id= "title" x="100" y="40" font-size= "20px"  > (1960 - 2020) </text>
+
+     {% for life in increment_life %}
+          <text class="label" x="75" y="{{150+loop.index0*75}}">{{life}}</text>
+     {% endfor %}
+     <text class= "label" id= "axis_title" x="320" y="550" font-size= "20px" text-anchor="center" >Year (1960-2020)</text>
+     <text class="label" id= "axis_title" text-anchor= "center" alignment-baseline="middle" transform="translate(40, 390) rotate(270)">Life Expectancy (years)</text>
+     <text class= "label" id= "title" x="100" y="100" font-size= "30px"  >Average Life Expectancy in Canada, Mexico, and the USA </text>
+     <text class= "label" id= "title" x="100" y="120" font-size= "20px"  > (1960 - 2020) </text>
+
+    
 
 </svg>

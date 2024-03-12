@@ -13,8 +13,33 @@ svg{
   stroke-width:5;
 }
 
-.line {
+.canada_class {
   stroke:black; 
+}
+.canada_class:hover {
+  stroke:#ff367f;
+  fill:#ff367f;
+}
+
+.mexico_class {
+  stroke:black; 
+
+}
+.mexico_class:hover {
+  stroke:#ff367f;
+  fill:#ff367f;
+}
+
+.usa_class {
+  stroke:black; 
+
+}
+.usa_class:hover {
+  stroke:#ff367f;
+  fill:#ff367f;
+}
+
+.line {
   stroke-width:2;
 }
 
@@ -22,10 +47,21 @@ svg{
   font-weight: bold;
 }
 
-.line:hover {
-  stroke: #ff63bc;
-}
 
 #axis_title {
   font-size: 20px;
 }
+
+.Canada {
+  fill: "rgb{{canada_color}}"; 
+}
+
+.Mexico {
+  fill: "rgb{{mexico_color}}"; 
+}
+
+.US {
+  fill: "rgb{{usa_color}}"; 
+}
+
+

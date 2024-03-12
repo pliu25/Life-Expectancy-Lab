@@ -1,7 +1,7 @@
 
 <html>
 <head>
-  <title>Life Expectancy Lab</title>
+  <title>{{requested_year}} Average Life Expectancy by Country</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +17,28 @@
 </head>
 <body class="rokkitt-font">
 
-  <h1> {{requested_year}} </h1>
+  <h1> {{requested_year}} Average Life Expectancy by Country </h1>
 
   <div id="north_america">
     {% include 'north_america.svg' %}
   </div>
+  {% if mexico_life < canada_life and mexico_life < usa_life %}
+    <p> Mexico's life expectancy is the shortest. </p>
+  {% endif %}
+
+  {% if mexico_life < canada_life and canada_life < usa_life %}
+    <p> Canada's life expectancy is in between Mexico's and the United States'. </p>
+  {% endif %}
+
+  {% if usa_life > canada_life and usa_life > mexico_life %}
+    <p> The United States' life expectancy is the longest. </p>
+  {% endif %}
+  {% if canada_life > usa_life and canada_life > usa_life %}
+    <p> Canada's life expectancy is the longest. </p>
+  {% endif %}
+  {% if usa_life > mexico_life and usa_life < canada_life %}
+    <p> The United States' life expectancy is in between Mexico's and Canada's. </p>
+  {% endif %}
 
   <footer>
     All data from <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=MX-US-CA"> The World Bank</a>.
