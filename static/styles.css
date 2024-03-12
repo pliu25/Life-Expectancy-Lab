@@ -39,6 +39,14 @@ svg{
   fill:#ff367f;
 }
 
+.dash:hover {
+  stroke:#ff367f;
+  fill:#ff367f;
+}
+
+.dash {
+  stroke: black;
+}
 .line {
   stroke-width:2;
 }

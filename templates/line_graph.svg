@@ -1,9 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" stroke="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" stroke="transparent" stroke-width="0px">
 
      <line class="axis" x1="100" y1="498" x2="675" y2="498" stroke-width = "5"/>
      <line class="axis" x1="100" y1="140" x2="100" y2="500" stroke-width = "5"/>
 
-     <line class="line" x1="100" y1="{{450-((universalAvg -67.5)*13) -145}}" x2="675" y2="{{universalAvg}}" />
+     <a class="dash">
+     <line class="line" x1="100" y1="{{450-((universalAvg -67.5)*13) -145}}" x2="640" y2="{{450-((universalAvg -67.5)*13) -145}}" stroke-dasharray="35,10" opacity ="0.5"/>
+     <text class="label" x="675" y="{{450-((universalAvg -67.5)*13) -145}}">Average Life Expectancy Throughout Years and Countries</text>
+     </a>
 
      <a class="canada_class">
      {% for point in canada_endpoints %}
@@ -29,10 +32,12 @@
 
      {% for year in increment_years %}
       <text class="label" x="{{100+loop.index0*90}}" y="520">{{year}}</text>
+      <line x1="{{(100+loop.index0*90)+15}}" y1="500" x2="{{(100+loop.index0*90)+15}}" y2="487.5" stroke="black" stroke-width="5"/>
      {% endfor %} 
 
      {% for life in increment_life %}
           <text class="label" x="75" y="{{150+loop.index0*75}}">{{life}}</text>
+          <line x1="100" y1="{{(150+loop.index0*75)-2.5}}" x2="110" y2="{{(150+loop.index0*75)-2.5}}" stroke="black" stroke-width="5"/>
      {% endfor %}
      <text class= "label" id= "axis_title" x="320" y="550" font-size= "20px" text-anchor="center" >Year (1960-2020)</text>
      <text class="label" id= "axis_title" text-anchor= "center" alignment-baseline="middle" transform="translate(40, 390) rotate(270)">Life Expectancy (years)</text>
