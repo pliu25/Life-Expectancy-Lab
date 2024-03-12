@@ -24,7 +24,7 @@
   </div>
 
   <div>
-    <form action="/year" method="GET">
+    <form action="/map/?year={{requested_year}}" method="GET">
       <label for="year">Choose a year:</label><br>
       <select name="year" id="year_select">
         {% for y in years %}
