@@ -18,3 +18,7 @@ svg{
   stroke:black; 
   stroke-width:2;
 }
+
+.label {
+  font-weight: bold;
+}

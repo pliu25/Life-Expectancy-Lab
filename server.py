@@ -20,12 +20,26 @@ def index():
     canada_line_endpoints =[]
     mexico_line_endpoints =[]
     usa_line_endpoints =[]
-    print(canada)
+    print("canada",canada)
     years = sorted(data["Canada"].keys())
     increment_years = []
 
     for year in range(0, len(years), 10):
         increment_years.append(years[year])
+
+    yearAmt = (len(years))*3
+    canada_life = 0
+    mexico_life = 0
+    usa_life = 0
+
+    for life_amt in (data["Canada"].values()):
+        canada_life+=life_amt 
+    for life_amt in (data["Mexico"].values()):
+        mexico_life+=life_amt 
+    for life_amt in (data["United States"].values()):
+        usa_life+=life_amt 
+    universalAvg = (canada_life + mexico_life + usa_life)/yearAmt
+    print("universalAvg", universalAvg)
 
     
 
