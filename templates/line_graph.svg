@@ -1,13 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="1000" height="550">
-     <style>
-     .label {
-          font-weight: bold;
-     }
-
-     #axis_title {
-          font-size: 20px;
-     }
-     </style>
 
      <line class="axis" x1="100" y1="450" x2="675" y2="450" stroke= "black" stroke-width = "5"/>
      <line class="axis" x1="100" y1="50" x2="100" y2="450" stroke= "black" stroke-width = "5"/>
@@ -32,7 +23,7 @@
      {% endfor %} 
      <text class= "label" id= "axis_title" x="320" y="500" font-size= "20px" text-anchor="center" >Year (1960-2020)</text>
      <text class="label" id= "axis_title" text-anchor= "center" alignment-baseline="middle" transform="translate(50, 315) rotate(270)">Life Expectancy (years)</text>
-     <text class= "label" id= "axis_title" x="320" y="30" font-size= "30px" text-anchor="center" >Average Life Expectancy in Canada, Mexico, and the USA </text>
-     <text class= "label" id= "axis_title" x="320" y="40" font-size= "20px" text-anchor="center" > (1960 - 2020) </text>
+     <text class= "label" id= "title" x="100" y="20" font-size= "30px"  >Average Life Expectancy in Canada, Mexico, and the USA </text>
+     <text class= "label" id= "title" x="100" y="40" font-size= "20px"  > (1960 - 2020) </text>
 
 </svg>

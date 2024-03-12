@@ -53,16 +53,26 @@ def index():
     print("c_e",canada_line_endpoints)
     return render_template('index.html', years = sorted(data["Canada"].keys()), increment_years = increment_years, canada_endpoints = canada_line_endpoints, mexico_endpoints = mexico_line_endpoints, usa_endpoints = usa_line_endpoints)
 
-@app.route('/year')
-def year():
+@app.route('/year<year>')
+def year(year):
     #load a current view of the data
     f = open("data/life_expectancy.json", "r")
     data = json.load(f)
     f.close()
 
+    canada = data["Canada"]
+    mexico = data["Mexico"]
+    usa = data["United States"]
+
+    requested_year = year 
+
+    print("year", year)
+
+
+
    
 
 
-    return render_template('year.html')
+    return render_template('year.html', years = sorted(data["Canada"].keys()), requested_year = requested_year)
 
 app.run(debug=True)

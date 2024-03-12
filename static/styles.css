@@ -3,7 +3,6 @@ body{
   
 }
 
-
 svg{
   border-style: solid;
   border-width: 1px;
@@ -21,4 +20,12 @@ svg{
 
 .label {
   font-weight: bold;
+}
+
+.line:hover {
+  stroke: #ff63bc;
+}
+
+#axis_title {
+  font-size: 20px;
 }
