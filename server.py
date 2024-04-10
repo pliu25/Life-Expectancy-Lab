@@ -143,10 +143,6 @@ def year():
         usa_color = 122, 38, 255
     if 79.75 < usa_life <= 83:
         usa_color = 105, 10, 255
-        
-        
-
-        
 
 
     return render_template('year.html', years = sorted(data["Canada"].keys()), requested_year = requested_year, canada_color = canada_color, mexico_color = mexico_color, usa_color = usa_color, canada_life = canada_life, mexico_life = mexico_life, usa_life = usa_life)
